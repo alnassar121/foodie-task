@@ -9,10 +9,10 @@ def restaurant_list(request):
 
 	return render(request, 'restaurant_list.html', context)
 
-def restaurant_detail(request):
-	x = Restaurant.object.get(id=restaurant_id)
+def restaurant_detail(request, restaurant_id):
+	
 	context = {
-	'object': x
+	'object': Restaurant.objects.get(id=restaurant_id)
 	}
 
 	return render(request, 'restaurant_detail.html', context)
